@@ -1,4 +1,7 @@
 {
+    "installing": "Setup before the Hackathon",
     "git_intro": "Introduction to Git",
-    "md_intro": "Introduction to Markdown"
+    "md_intro": "Introduction to Markdown",
+    "pygame_intro": "Introduction to PyGame",
+    "bestcodingpractices_intro": "Best Coding Practices"
 }

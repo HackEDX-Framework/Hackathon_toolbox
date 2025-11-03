@@ -1,0 +1,129 @@
+import ActivityTracker from '@/components/ActivityTracker'
+import Forum from '@/components/discussionForum/Forum';
+
+# Introduction to Pygame
+<ActivityTracker/>
+
+## What is Pygame?
+
+Pygame is a cross-platform set of Python modules designed for creating video games and multimedia applications. It provides low-level access to audio, keyboard, mouse, and display functions, enabling developers to create fully featured games and multimedia programs in Python. One of Pygame's key advantages is its simplicity, making it highly popular among beginner and experienced developers alike.
+
+Pygame is free and open-source, which means anyone can use, modify, and distribute it. The library offers hundreds of pre-built commands that handle complex tasks like rendering graphics, managing game states, and playing sounds. This extensive set of commands makes it easy for programmers to create even complex games without diving deeply into hardware-level programming.
+
+Despite its extensive features, Pygame requires only a small amount of code to get started. Developers can quickly prototype and build games with just a few lines of code, allowing for rapid development and iteration. Pygame is also highly portable, working seamlessly on almost all operating systems, including Windows, macOS, and Linux.
+
+<div style={{
+    position: 'relative',
+    overflow: 'hidden',
+    width: '98%',
+    maxWidth: '640px',
+    paddingTop: '56.25%', /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+    margin: "auto"
+}}>
+    <iframe
+        style={{
+            position: 'absolute',
+            top: '0',
+            left: '0',
+            width: '100%',
+            height: '100%'
+        }}
+        src="https://www.youtube-nocookie.com/embed/y9VG3Pztok8?si=QS8qaDW7C754Rbo1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+
+    </iframe>
+</div>
+
+
+---
+
+## Getting started
+
+### How to install Pygame?
+
+To use Pygame, Python must first be installed on your system. Pygame requires Python 3.x or higher. You can check if Python is installed by opening the terminal or command prompt and entering the command `python --version`.
+
+> Note: We recommend using [virtual environments](/bestcodingpractices_intro.md#virtual-environments) for this.
+
+If a version such as Python 3.10.11 is displayed, you are all set!
+<img src="/hack-participant-kit/pygame_pythonversion.png" alt="Terminal output of the command python --version" width="400"/>
+
+#### Installing Pygame using pip
+
+> Note: If you are using virtual environments (as suggested and supported by PyCharm and other IDEs), you will need to separately install Pygame for every new project [like described here](#installing-pygame-in-pycharm).
+
+Pygame can be installed using Python’s package manager pip. Open a terminal or command prompt and enter the following command: `pip install pygame`. This command downloads and installs Pygame on your system.
+
+To verify the installation, you can run a built-in Pygame example. Open a terminal and run
+`python -m pygame.examples.aliens`. If a window opens with a sample game, the installation was successful. Otherwise, an error message will indicate what went wrong.
+
+<img src="/hack-participant-kit/pygame_samplegame.png" alt="The sample game integrated into pygames" width="400"/>
+
+#### Installing Pygame in PyCharm
+
+If you are using PyCharm as your integrated development environment (IDE), you can easily install Pygame directly from within PyCharm.
+
+**Follow these steps:**
+
+1. Open PyCharm and either create a new Python project or open an existing one.
+2. Click on the button *Python Packages* on the left corner of PyCharm.
+<img src="/hack-participant-kit/pygame_pycharm_packagesUI.png" alt="A screenshot of the Python Packages icon" width="200"/>
+3. Type "pygame" into the search box.
+4. Click on the first result and then select install. After that, click on the newest version to install.
+5. You can now close the Packages window.
+6. Verify Installation: After installation, you can verify that Pygame is working correctly. Open a new Python file in PyCharm and enter the following code:
+    1. `import pygame`
+    2. `pygame.init()`
+    3. `print("Pygame successfully installed!")`
+    4. Run the code by right-clicking in the editor and selecting Run. If no errors occur and you see the message "Pygame successfully installed!" in the console, the installation was successful.
+
+### Initialization & Setup
+
+Before using any Pygame functions, the module must be imported into your Python script. This is done with the simple command `import pygame` at the top of your code. After importing, all necessary Pygame modules must be initialized before starting the main game routine. This is accomplished using the `pygame.init()` function, which sets up all imported Pygame modules for use. If you only need specific modules, you can initialize them individually, such as `pygame.font.init()` or `pygame.mixer.init()` to initialize fonts or the mixer, respectively.
+
+To display graphics, the next step is to create a window. This is achieved using the command `pygame.display.set_mode()`. For instance, `screen = pygame.display.set_mode((800, 600))` creates a window with a width of 800 pixels and a height of 600 pixels. The returned object screen represents the surface where all images, shapes, and text can be drawn.
+
+To set a title for the window, use the `pygame.display.set_caption()` function. For example, the command `pygame.display.set_caption("My First Game")` sets the window’s title to "My First Game".
+
+**Here is a simple example that demonstrates the basic initialization of Pygame:**
+
+<img src="/hack-participant-kit/PyGame_Setup_Initialization.png" alt="A screenshot of the example code inside of an IDE. The example code is right under this picture" width="500"/>
+
+```Python
+import pygame
+
+# Initialize Pygame modules
+pygame.init()
+
+# Set up the game window
+screen = pygame.display.set_mode((800, 600))
+pygame.display.set_caption("My first Pygame window")
+
+# Main game loop
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+# Quit Pygame
+pygame.quit()
+```
+
+In this code example, `pygame.init()` is called to initialize all Pygame modules. The `pygame.display.set_mode()` function creates a game window, and `pygame.display.set_caption()` gives the window a title. The game’s main loop continuously monitors events in the game and specifically checks if the window was closed.
+
+> Remember to call **pygame.quit()** at the end of your script to ensure all Pygame resources are correctly released.
+
+Also, in Pygame it’s essential to set a framerate for controlling the speed of the game and ensuring smooth animations. To set up a framerate you need to use the clock object, that Pygame provides: `clock = pygame.time.Clock()`.
+
+To set your desired framerate, use the `clock.tick(fps)` method in your Main Game Loop to limit the loop to a certain number of frames per second. For most games, 60 fps will do a good job. For example: `clock.tick(60)`
+
+---
+
+##Comments
+
+<Forum tutorialId={"pygame_intro"} />

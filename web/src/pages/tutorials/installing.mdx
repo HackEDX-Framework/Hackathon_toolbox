@@ -1,0 +1,139 @@
+import { Tabs } from 'nextra/components'
+import { LightImage } from '@/components/DarkImage'
+import ActivityTracker from '@/components/ActivityTracker'
+import Forum from '@/components/discussionForum/Forum';
+
+# Set up your computer for the Hackathon
+<ActivityTracker/>
+
+<div style={{ width :'98%', maxWidth: '500px',  margin: "auto" }}>
+    <img src="/hack-participant-kit/Installing_CodeArcadeBanner.png" alt="Code Arcade Banner"  />
+</div>
+
+We’re excited to have you join our hackathon! To save time, we recommend installing the essential tools and software on your laptop beforehand.
+
+## Install Python
+
+As programming language we use Python - just like in GPT.
+
+We recommend using at least Python version 3.10 or higher.
+
+<details>
+    <summary>Windows</summary>
+
+    On Windows 11 and 10 we recommend using the Microsoft Store version of Python.
+
+    [Click here to get Python 3.13 from the Microsoft Store.](https://apps.microsoft.com/detail/9PNRBTZXMB4Z)
+
+    Click on Download and run the downloaded file. The setup  will do the work for you.
+
+    After the setup, a Command Prompt window should open automatically, showing you Python and the respective installed version.
+
+    <div style={{ width :'98%', maxWidth: '500px',  margin: "auto" }}>
+        <img src="/hack-participant-kit/Installing_Python_WindowsInstallationCheck.png" alt="Installing Python on Windows - Installation Check"  />
+    </div>
+
+</details> 
+
+<details>
+    <summary>MacOS</summary>
+
+    1. [Click here to download the Python installer for macOS](https://www.python.org/ftp/python/3.13.1/python-3.13.1-macos11.pkg). It's a universal installer for both Intel and ARM based MacBooks. Click through the pages and accept the terms of the software license agreement.
+    2. After the installation, a new Finder window opens with some files, but you can close it.
+    3. To verify the installation of Python, open the `Terminal` through the Spotlight search (`command` + `space`).
+    4. Type in the command `python3 --version` and press enter. The output should show the installed Python version.
+
+    <div style={{ width :'98%', maxWidth: '500px',  margin: "auto" }}>
+        <img src="/hack-participant-kit/Installing_Python_MacOSInstallationCheck.png" alt="Installing Python on MacOS - Installation Check"  />
+    </div>
+
+</details>
+
+## Install Pygame and NumPy
+
+Python is successfully installed on our machine — great job! But to create games in Python, we’ll need a few additional libraries to make our work easier. Let’s install some extensions to enhance Python’s capabilities.
+
+For this we use the integrated package manager of Python called `pip`.
+
+<details>
+    <summary> Windows </summary>
+
+    1. Open the Windows Search and search for `cmd`. Open the result named `Command Prompt` or `Eingabeaufforderung` in german.
+    2. Now we will install Pygame using pip. In the command prompt type the following command: `pip install pygame`. Press enter to run the command.
+    3. After the installation completed, you can check if Pygame was successfully installed by running the integrated test game with the following command: `python -m pygame.examples.aliens`.
+    4. Now let's install the other library we need, called numpy. Run the following command: `pip install numpy`.
+
+    <div style={{ width :'98%', maxWidth: '500px',  margin: "auto" }}>
+        <img src="/hack-participant-kit/Installing_Pygame_WindowsInstallationTest.png" alt="Installing Pygame on Windows - Installation Test"  />
+    </div>
+
+</details>
+
+<details>
+    <summary> MacOS </summary>
+
+    1. Open the Spotlight search with `command` + `spacebar`.
+    2. Now we will install Pygame using pip. In the Terminal type the following command: `pip3 install pygame`. Press enter to run the command.
+    3. After the installation completed, you can check if Pygame was successfully installed by running the integrated test game: `python3 -m pygame.examples.aliens`.
+    4. Now let's install the other library we need, called NumPy. Run the following command: `pip3 install numpy`.
+
+    <div style={{ width :'98%', maxWidth: '500px',  margin: "auto" }}>
+        <img src="/hack-participant-kit/Installing_Pygame_MacOSTestGame.png" alt="Installing Pygame on MacOS - Test Game"  />
+    </div>
+
+</details>
+
+## Install Git
+
+We use Git for version control, which makes it easy to download, manage and organize existing code. It also facilitates collaboration with other contributors by providing a good way to share code changes.
+
+<details>
+    <summary> Windows </summary>
+
+    <div style={{ width :'98%', maxWidth: '500px',  margin: "auto" }}>
+        <img src="/hack-participant-kit/Installing_Git_WindowsSetup.png" alt="Installing Git on Windows - Setup"  />
+    </div>
+
+    1. [Click here to access the official website from Git](https://git-scm.com/downloads/win). Click on `64-bit Git for Windows Setup` to download version of Git.
+    2. Run the downloaded setup.
+    3. The setup contains multiple pages with many options. The default settings are a good choice. This is why it's okay to just press next until the installation starts.
+    4. To verify the installation, open `cmd` and run the command `git version`.
+
+</details>
+
+<details>
+    <summary> MacOS </summary>
+    <div style={{ width :'98%', maxWidth: '500px',  margin: "auto" }}>
+        <img src="/hack-participant-kit/Installing_Git_MacOSXcodeSelect.png" alt="Installing Git on MacOS"  />
+    </div>
+
+    1. Open the Terminal.
+    2. Type in the following command: `sudo xcode-select --install`.
+    3. A dialog will appear, that says that the xcode-select command requires the command line developer tools. Click on `Install` to install them.
+    4. To verify the installation, open `Terminal` and run the command `git version`.
+
+</details>
+
+## Install Pycharm
+
+Now we need an environment to write Python code. While there are many options available — some of you might even use Notepad — we strongly recommend using PyCharm. It offers a variety of convenient features and, most importantly, supports Git integration, making version control usable.
+
+    <div style={{ width :'98%', maxWidth: '500px',  margin: "auto" }}>
+        <LightImage src="/hack-participant-kit/Installing_Pycharm_Ui.png" alt="Installing PyCharm UI"  />
+    </div>
+
+[Click here to open the download page for PyCharm](https://www.jetbrains.com/de-de/pycharm/download/).
+
+1. Choose your platform (Windows, macOS or Linux).
+2. Scroll down to PyCharm Community Edition and download this one. It's free.
+
+
+##
+
+Congrats, you`ve made it to the end of this tutorial! 🎉
+
+If you don't succeed with every step, that's no problem. We can help you on site on friday. 🫶
+
+
+## Comments
+<Forum tutorialId={"installing"} />

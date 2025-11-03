@@ -1,0 +1,309 @@
+import ActivityTracker from '@/components/ActivityTracker'
+import Forum from '@/components/discussionForum/Forum';
+
+# Best practices for Coding
+<ActivityTracker/>
+
+## What are best coding practices?
+
+There a set of informal rules for programming, to improve the **quality of the code**.
+
+## Readability
+
+**Everyone should understand your code easily**.
+
+`Example:`
+
+```python
+def how_to_calculate_percentage (price, tax_rate):
+  return price * (tax_rate / 100)
+```
+
+### Naming
+
+Use clear, descriptive names for variables, functions, and classes.
+
+#### BAD: Vague names that don’t convey purpose
+
+```python
+# bad: vague names that don’t convey purpose
+def c(x, y):
+    return x * y
+
+# good: descriptive names that clarify intent
+def calculate_area(width, height):
+    """Calculates the area of a rectangle."""
+    return width * height
+```
+
+### Spacing
+
+Use proper spacing to make code more readable.
+
+```python
+# bad: no spacing, hard to read
+def multiply(a,b):return a*b
+
+# good: Consistent spacing between elements and around operators
+def multiply(a, b):
+    """Multiplies two numbers."""
+    return a * b
+```
+
+### Simplicity (over performance/complexity)
+
+Write simple, clear code, even if a more complex solution is faster.
+So be aware if you look for help on the internet - the mightiest solution may make it too hard for your teammates to follow in an early stage of getting into programming.
+
+1. Conciseness
+2. Avoiding Complexity
+3. Code Reusability
+4. Refactoring
+5. Over-optimization
+
+**Why we need Simplicity?**
+
+- **Readability**: Easier to understand.
+- **Maintainability**: Simplifies updates and changes.
+- **Faster Onboarding**: Helps new developers learn quickly.
+
+#### Conciseness
+
+- Concise code means completing the function with the least amount of code and avoiding redundancy.
+- Concise code is easier to read and maintain.
+
+`Example`
+Summing a List of Numbers.
+
+```python
+# bad example
+def sum_numbers(numbers):
+    total = 0
+    for number in numbers:
+        total += number
+    return total
+
+# good example: use Python’s built-in `sum()` function
+def sum_numbers(numbers):
+    return sum(numbers)
+```
+
+#### Avoiding Complexity
+
+- Complex code is difficult to understand and maintain.
+- Avoiding Complexity can keep code understandable by breaking down complex logic into smaller parts.
+
+`Example`
+```python
+# bad example: complex logic
+def check_number(number):
+    if number is None:
+        return False
+    elif number < 0:
+        return False
+    else:
+        return number % 2 == 0
+
+# good example: simple logic
+def is_even(number):
+    return number % 2 == 0
+```
+
+#### Code Reusability
+
+- Create reusable functions or modules to avoid code duplication and improve development efficiency.
+
+`Example`
+
+- Consolidate repeated logic into a reusable function.
+
+```python
+# bad: duplicate code (not recommended)
+def send_email_to_user1():
+
+def send_email_to_user2():
+
+# good: reusable function
+def send_email(user):
+```
+
+#### Refactoring
+
+- Refactoring is the process of improving existing code without changing its external behaviour.
+- Regular refactoring improves code readability and performance, removes duplicate code, and optimises structure.
+
+`Example`
+
+- The `calculate_area_circle` and `calculate_area_square` functions have similar logic for different shapes. Adding new shapes requires creating additional functions, leading to redundant code.
+
+```python
+# Before refactoring
+def calculate_area_circle(radius):
+    return 3.14 * radius ** 2
+
+def calculate_area_square(side):
+    return side * side
+
+# After refactoring
+def calculate_area(shape, size):
+    if shape == "circle":
+        return 3.14 * size ** 2
+    elif shape == "square":
+        return size * size
+```
+
+#### Over-Optimization
+
+Write simple, clear code, even if a more complex solution is faster.
+So be aware if you look for help on the internet - the mightiest solution may make it too hard for your teammates to follow in an early stage of getting into programming.
+
+```python
+# bad: complex one-liner that’s hard to understand
+result = [x**2 for x in range(10) if x % 2 == 0 and x > 2]
+
+# good: simple, readable code even if it’s slightly slower
+result = []
+for x in range(10):
+    if x % 2 == 0 and x > 2:
+        result.append(x**2)
+```
+
+### Things to avoid when coding
+
+Poor coding practices can lead to buggy, hard-to-maintain, and insecure code. Here are some of the worst coding practices to avoid:
+
+1. **Ignoring Error Handling:** Not handling errors leads to poor user experience and unpredictable behavior. Always implement error handling to gracefully manage unexpected situations.
+2. **Overusing Comments Instead of Writing Clear Code:** Comments are essential, but they shouldn’t replace clear code. Code should be self-explanatory as much as possible; otherwise, it may indicate that the code itself could be improved.
+3. **Writing Code That’s Too Clever:** Clever code (like one-liners or complex conditional logic) might be fun to write but is hard to understand later. Write code that prioritizes readability and maintainability.
+4. **Failing to Use Version Control:** Not using version control (e.g., Git) limits your ability to track changes and collaborate effectively. It’s essential for both solo and team development.
+5. **Ignoring Code Reviews:** Skipping code reviews or disregarding feedback leads to unchecked mistakes and missed learning opportunities. Code reviews improve quality and provide fresh perspectives on the code.
+
+Avoiding these practices can lead to a codebase that is cleaner, more secure, and easier to maintain, which ultimately makes the development process more efficient and enjoyable.
+
+## Documentation & Comments
+
+### Why Comments and Docstrings are Important in Code
+
+Comments and docstrings are essential in Python because they make code easier to read and understand. They explain **what** the code does and **why** it does it, which is helpful for:
+
+1. **Collaboration**: Other programmers (or even your future self) can quickly understand the purpose and logic of the code.
+2. **Maintenance**: When updating code later, comments and docstrings make it easier to modify or debug without having to re-learn how it works.
+3. **Learning**: For beginners, comments and docstrings serve as a guide to follow the code’s steps and purpose, making complex code more readable.
+
+In short, comments and docstrings help ensure code is clear, maintainable, and beginner-friendly!
+
+### Docstrings
+
+Docstrings in Python are special comments used to describe what a piece of code (like a function, class, or module) does. They’re a type of documentation placed directly in the code, allowing programmers to quickly understand the purpose of specific code sections without needing to look elsewhere.
+
+```python
+def greet(name):
+    """
+    Greets a person by name.
+
+    Parameters:
+    name (str): The name of the person to greet.
+
+    Returns:
+    str: A greeting message.
+    """
+    return f"Hello, {name}!"
+```
+
+### Comments
+
+#### Lines Comments
+
+Use line comments for brief explanations of specific lines.
+
+```python
+x = 5  # Assigns the value 5 to variable x
+y = x + 2  # Adds 2 to x and stores the result in y
+```
+
+#### Block comments
+
+Use block comments for detailed explanations of code sections, especially if they have complex logic.
+
+```python
+# This section calculates the area of a rectangle.
+# We need the width and height, then multiply them.
+width = 10
+height = 5
+area = width * height  # Calculates area
+
+```
+
+## Pro-tip: Team-specific coding standards
+
+### Team Coding Standards
+
+1. **Objectives**: Ensure consistency, readability, and maintainability in code.
+
+2. **Style Guide**: Use and customize an existing style guide (e.g., PEP 8).
+
+3. **Formatting Rules**:
+   - Indentation: 4 spaces
+   - Line Length: Max 79 characters
+   - Braces: Follow PEP 8 standards
+
+4. **Naming Conventions**:
+   - Variables: `snake_case`
+   - Functions: Descriptive names (e.g., `move_player()`)
+   - Classes: `PascalCase`
+
+5. **Commenting**: Use function comments, inline comments, and docstrings for clarity.
+
+6. **Code Review & Automation**: Implement a review process using GitHub/GitLab and use linters (e.g., pylint) to enforce standards.
+
+## Additional Resources
+
+- [PEP8-Styleguide](https://peps.python.org/pep-0008/)
+  - Using PEP 8 makes code easier to read and follow for all team members, so they can quickly understand each other's work without getting bogged down by inconsistent styles.
+- [Virtual environments documentation](https://docs.python.org/3/library/venv.html)
+
+## Virtual environments
+
+A Python virtual environment, or "venv," is a tool that creates a separate, isolated environment for each Python project, so you can manage specific packages and dependencies without affecting other projects on your computer.
+
+### WHY?
+
+- **Avoid Conflicts**: Virtual environments keep your project's dependencies separate, so you do not run into issues with different versions of packages across projects.
+- **Simplify Collaboration**: When everyone on your team uses a virtual environment, it iss easier to ensure everyone is using the same dependencies and versions, making it easier to avoid compatibility issues.
+- **Best Practice for Reusability**: Virtual environments make it easy to package up your project for others to use, and they are a standard practice in professional projects.
+
+### Prerequisites
+
+- Make sure the project you received already contains a ```requirements.txt``` file.
+
+### Workflow on Windows
+
+- **Create a virtual environment**:
+  - open a terminal inside [Pycharm](https://www.jetbrains.com/help/pycharm/terminal-emulator.html) or [Visual Studio](https://code.visualstudio.com/docs/terminal/getting-started#:~:text=Open%20the%20terminal%20by%20selecting,the%20Ctrl%2B%60%20keyboard%20shortcut.)
+  - ```python -m venv C:\\path\\to\\new\\virtual\\environment```
+- **Activate a virtual environment**:
+  - If using _cmd.exe_: ```nameOfVenv\\Scripts\\activate.bat```
+  - If using _powershell_: ```nameOfVenv\\Scripts\\activate.ps1```
+- **Install dependencies (python packages) in your virtual environment**:
+  - In your _terminal_ type: ```pip install -r requirements.txt```
+- **Deactivate a virtual environment**:
+  - Just type in your _cmd.exe_ or _powershell_: ```deactivate```
+
+### Workflow on Unix-based systems (macOS & Linux)
+
+- **Create a virtual environment**:
+  - Open a terminal in your project root directory from [Pycharm](https://www.jetbrains.com/help/pycharm/terminal-emulator.html) or [Visual Studio](https://code.visualstudio.com/docs/terminal/basics)
+  - In your _terminal_ type: ```python -m venv /path/to/new/virtual/environment```
+- **Activate a virtual environment**:
+  - In your _terminal_ type: ```source nameOfVenv/bin/activate```
+- **Install dependencies (python packages) in your virtual environment**:
+  - In your _terminal_ type: ```pip install -r requirements.txt```
+- **Deactivate a virtual environment**:
+  - In your _terminal_ type: ```deactivate```
+
+---
+
+## Comments
+
+
+<Forum tutorialId={"bestcodingpractices_intro"} />

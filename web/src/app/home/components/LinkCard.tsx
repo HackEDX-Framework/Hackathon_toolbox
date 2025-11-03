@@ -20,7 +20,7 @@ const LinkCard = ({ title, active_description, inactive_description, path, newTa
     const now = new Date();
     const [active, setActive] = useState(now >= startTime && now <= endTime)
 
-    const active_styling = "group rounded-lg border px-5 py-4 transition-colors border-neutral-700 bg-amber-600 hover:bg-[#EBE540]/50 shadow-xl text-white hover:text-black"
+    const active_styling = "group rounded-lg border px-5 py-4 transition-colors border-neutral-700 bg-lime-600 hover:bg-[#93C136]/50 shadow-xl text-white hover:text-black"
     const inactive_styling = "rounded-lg border px-5 py-4 transition-colors border-neutral-700 bg-inherit text-black"
 
     useEffect(() => {

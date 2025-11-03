@@ -27,7 +27,7 @@ const Description = () => {
         <CardBody className='flex items-center justify-center'>
 
           <p className='font-the-hand text-center text-xl md:text-4xl text-center mx-10'>
-            We will work in groups to contribute to a Toolbox of Human-Centred Strategies for AI Literacy
+            We will work in teams on challenges in a pre-built virtual arcade machine adding functionality and fun additions to prepared games supported by hints in the challenges and mentors on site.
           </p>
 
         </CardBody>

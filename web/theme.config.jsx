@@ -6,7 +6,7 @@ export default {
     link: 'https://github.com/hackailiteracy/hackailiteracy.github.io'
   },
   chat: {
-    link: 'https://discord.gg/pf2Ck8bhag'
+    link: 'https://discord.gg/Gkyd9ZNRfy'
   },
   darkMode: true,
   sidebar: { toggleButton: true },
@@ -17,7 +17,7 @@ export default {
   },
   gitTimestamp: null,
   footer: {
-    text: 'Hackailiteracy - AIED 2024 ',
+    text: 'CodeArcade 2025',
   },
 
   useNextSeoProps() {
